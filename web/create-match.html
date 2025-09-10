@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать матч - PlayoffArena</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/faceit.css">
+</head>
+<body>
+    <header class="navbar-sticky">
+        <div class="container">
+            <a href="/" class="logo">Playoff<span>Arena</span></a>
+            <nav>
+                <a href="/">Матчи</a>
+                <a href="/venues.html">Площадки</a>
+            </nav>
+            <div id="user-nav-actions" class="user-actions"></div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="form-container">
+            <h1>Новый матч</h1>
+            <form id="create-match-form">
+                <div class="form-group">
+                    <label for="title">Название матча</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="field-select">Площадка</label>
+                    <select id="field-select" required><option value="">Выберите площадку</option></select>
+                </div>
+                <div class="form-group">
+                    <label for="date-select">Дата</label>
+                    <input type="date" id="date-select" required>
+                </div>
+                <div class="form-group">
+                    <label>Доступные слоты</label>
+                    <div id="available-slots" class="slots-list" style="max-height: 200px;">
+                        <p style="color: var(--muted);">Выберите площадку и дату...</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="max_players">Макс. игроков</label>
+                    <input type="number" id="max_players" name="max_players" value="10" required>
+                </div>
+                <div class="form-group-checkbox" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <input type="checkbox" id="waitlist_enabled" name="waitlist_enabled" checked style="width: auto;">
+                    <label for="waitlist_enabled" style="margin-bottom: 0;">Включить лист ожидания</label>
+                </div>
+                <div class="form-group-checkbox" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                    <input type="checkbox" id="is_private" name="is_private" style="width: auto;">
+                    <label for="is_private" style="margin-bottom: 0;">Приватный матч (не будет виден в общем списке)</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full-width">Создать и забронировать</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </div>
+    </main>
+    <script src="/assets/app.js"></script> <script src="/assets/create-match.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayoffArena - Платформа для организации спортивных матчей</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FF5500">
+</head>
+<body>
+    <header class="navbar-sticky">
+        <div class="container">
+            <a href="/" class="logo">Playoff<span>Arena</span></a>
+            <nav>
+                <a href="/matches.html">Матчи</a>
+                <a href="/venues.html">Площадки</a>
+            </nav>
+            <div id="user-nav-actions" class="user-actions">
+                </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Найди свою игру. В любое время.</h1>
+                <p class="subtitle">Присоединяйся к матчам в своем городе или создавай свои. PlayoffArena — твой путь в мир любительского спорта.</p>
+                <a href="/matches.html" class="btn btn-primary btn-large">Смотреть матчи</a>
+            </div>
+        </section>
+        
+        <section class="container live-matches">
+            <h2>Ближайшие игры</h2>
+            <div class="card-grid" id="live-matches-grid">
+                </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2>В чем польза?</h2>
+                <div class="steps">
+                    <div class="step">
+                        <h3>Экономия времени</h3>
+                        <p>Забудь о десятках сообщений в чатах. Находи или создавай матч за пару кликов, управляй составом и получай уведомления.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Для всех уровней</h3>
+                        <p>Неважно, новичок ты или профессионал. Находи игры своего уровня и получай удовольствие от честной конкуренции.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Удобство для бизнеса</h3>
+                        <p>Владельцы площадок получают мощный инструмент для управления расписанием, бронированиями и финансами.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <div class="container">
+                <h2>Что говорят игроки</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Наконец-то нормальная платформа! Нашел ребят для футбола за 15 минут, раньше на это уходили часы в WhatsApp-чатах."</p>
+                        <span class="author">- Азамат, Алматы</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Как владелец площадки, я в восторге. Загрузка расписания — топ, клиенты сами бронируют слоты под матчи."</p>
+                        <span class="author">- Сергей, Астана</span>
+                    </div>
+                     <div class="testimonial-card">
+                        <p>"Очень удобный интерфейс, всё интуитивно понятно. Waitlist — просто спасение для популярных игр."</p>
+                        <span class="author">- Алия, Шымкент</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <h2>О Нас (TWOSPACESOFTGROUP)</h2>
+                <p>Мы — команда разработчиков и энтузиастов спорта из **TWOSPACESOFTGROUP**. Мы создали PlayoffArena, потому что сами устали от хаоса в спортивных чатах и сложностей с организацией игр. Наша цель — дать сообществу простой, технологичный и удобный инструмент, который объединяет игроков и владельцев площадок. Мы верим, что спорт должен быть доступен каждому, и наша миссия — помочь вам найти свою команду и свою игру.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 PlayoffArena от TWOSPACESOFTGROUP. Все права защищены.</p>
+            <nav>
+                <a href="/legal/terms.html">Оферта</a>
+                <a href="/legal/privacy.html">Политика</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="/assets/app.js"></script>
+</body>
+</html>

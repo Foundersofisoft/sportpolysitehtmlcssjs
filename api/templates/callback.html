@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Аутентификация...</title>
+</head>
+<body>
+    <p>Пожалуйста, подождите...</p>
+    <script>
+        const token = '{{ token }}';
+        if (token) {
+            localStorage.setItem('accessToken', token);
+            window.location.href = '/account.html';
+        } else {
+            window.location.href = '/login.html?error=google-auth-failed';
+        }
+    </script>
+</body>
+</html>

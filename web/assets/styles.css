@@ -1,0 +1,262 @@
+/* --- ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СБРОС СТИЛЕЙ --- */
+:root {
+  --bg: #0E0E10;
+  --panel: #15161A;
+  --panel2: #1C1D22;
+  --line: #23252B;
+  --text: #FFFFFF;
+  --muted: #A1A1AA;
+  --brand: #FF5500;
+  --brand-hover: #E64D00;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- КОМПОНЕНТЫ --- */
+
+/* --- НАВИГАЦИЯ --- */
+.navbar-sticky {
+    position: sticky; top: 0; width: 100%;
+    background-color: var(--panel); border-bottom: 1px solid var(--line);
+    padding: 16px 0; z-index: 1000;
+}
+.navbar-sticky .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: bold; text-decoration: none; color: var(--text); }
+.logo span { color: var(--brand); }
+.navbar-sticky nav a { color: var(--muted); text-decoration: none; margin: 0 15px; transition: color 0.2s; }
+.navbar-sticky nav a:hover { color: var(--text); }
+
+/* --- КНОПКИ --- */
+.btn {
+    padding: 10px 20px; border-radius: var(--radius); text-decoration: none;
+    font-weight: 600; transition: background-color 0.2s, border-color 0.2s;
+    border: 1px solid transparent; cursor: pointer;
+}
+.btn-primary { background-color: var(--brand); color: var(--text); }
+.btn-primary:hover { background-color: var(--brand-hover); }
+.btn-secondary { background-color: transparent; border-color: var(--line); color: var(--text); }
+.btn-secondary:hover { background-color: var(--panel2); }
+.btn-full-width { width: 100%; padding: 15px; font-size: 16px; }
+.btn-large { padding: 15px 30px; font-size: 18px; }
+
+/* --- СТИЛИ ГЛАВНОЙ СТРАНИЦЫ --- */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: linear-gradient(rgba(14, 14, 16, 0.8), rgba(14, 14, 16, 0.95)), url('https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--line);
+}
+.hero-section h1 { font-size: 48px; margin-bottom: 20px; }
+.hero-section .subtitle {
+    font-size: 20px;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+.live-matches, .how-it-works, .testimonials, .about-us {
+    padding: 80px 20px;
+    text-align: center;
+}
+.live-matches h2, .how-it-works h2, .testimonials h2, .about-us h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.how-it-works { background-color: var(--panel); }
+.steps { display: flex; justify-content: space-between; gap: 30px; }
+.step {
+    flex-basis: 30%;
+    background-color: var(--panel2);
+    padding: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+}
+.step h3 { color: var(--brand); margin-bottom: 15px; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.testimonial-card {
+    background-color: var(--panel);
+    padding: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+}
+.testimonial-card p { color: var(--muted); font-style: italic; margin-bottom: 20px; }
+.testimonial-card .author { font-weight: bold; color: var(--text); }
+.about-us { background-color: var(--panel); }
+.about-us p { max-width: 700px; margin: 0 auto; color: var(--muted); line-height: 1.8; }
+
+/* --- ФИЛЬТРЫ-ЧИПЫ --- */
+.filters { display: flex; gap: 10px; margin-bottom: 30px; }
+.chip {
+    background-color: var(--panel2); color: var(--muted); border: 1px solid var(--line);
+    padding: 8px 16px; border-radius: 20px; cursor: pointer; transition: all 0.2s;
+}
+.chip:hover { border-color: var(--muted); }
+.chip.active { background-color: var(--brand); color: var(--text); border-color: var(--brand); }
+
+/* --- КАРТОЧКИ --- */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.card-link { text-decoration: none; color: inherit; }
+.card {
+    background-color: var(--panel); border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--line); transition: border-color 0.2s;
+    position: relative; padding-top: 4px;
+}
+.card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 4px; background-color: var(--brand);
+}
+.card:hover { border-color: var(--brand); }
+.card-content { padding: 20px; }
+.card-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+.card-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; margin-bottom: 15px; }
+.progress-bar { background-color: var(--panel2); border-radius: 4px; height: 8px; width: 100%; margin-top: 10px; }
+.progress-bar-fill { height: 100%; background-color: var(--brand); border-radius: 4px; }
+
+/* --- ФОРМЫ --- */
+.form-container {
+    max-width: 400px; margin: 60px auto; padding: 40px;
+    background-color: var(--panel); border-radius: var(--radius);
+    border: 1px solid var(--line);
+}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 14px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px; background-color: var(--panel2);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    color: var(--text); font-size: 16px;
+    font-family: inherit;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--brand); }
+.form-message {
+    margin-top: 20px; padding: 15px; border-radius: var(--radius);
+    text-align: center; display: none;
+}
+.form-message.success { background-color: #28a74520; color: #28a745; display: block; }
+.form-message.error { background-color: #dc354520; color: #dc3545; display: block; }
+
+/* --- ОБЩИЕ ЭЛЕМЕНТЫ СТРАНИЦ --- */
+.page-header { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 20px; }
+.page-header h1 { margin: 0; }
+
+/* --- КАРТОЧКА ЗАВЕДЕНИЯ И СПИСКИ --- */
+.venue-card {
+    background-color: var(--panel); border-radius: var(--radius);
+    border: 1px solid var(--line); margin-bottom: 20px; padding: 24px;
+}
+.venue-header {
+    border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 16px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.venue-header .iin { font-size: 14px; color: var(--muted); }
+.field-item, .player-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px; border-bottom: 1px solid var(--panel2);
+}
+.field-item:first-child, .player-item:first-child { padding-top: 0; }
+.field-item:last-child, .player-item:last-child { border-bottom: none; padding-bottom: 0; }
+.field-item .price { font-weight: 600; color: var(--brand); }
+
+/* --- СЛОТЫ --- */
+.slots-list {
+    max-height: 300px; overflow-y: auto; border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 10px;
+}
+.slot-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px; border-radius: 8px; margin-bottom: 5px;
+}
+.slot-item.available { background-color: #28a74520; }
+.slot-item.booked { background-color: #dc354520; color: var(--muted); text-decoration: line-through; }
+.slot-radio { display: block; margin: 5px 0; }
+.slot-radio input { display: none; }
+.slot-radio span {
+    display: block; padding: 10px; border-radius: 8px;
+    border: 1px solid var(--line); cursor: pointer; transition: all 0.2s;
+}
+.slot-radio input:checked + span {
+    border-color: var(--brand); background-color: var(--brand); color: var(--text);
+}
+.slot-radio span:hover { border-color: var(--muted); }
+
+/* --- ФУТЕР --- */
+.footer {
+    background-color: var(--panel);
+    border-top: 1px solid var(--line);
+    padding: 30px 0;
+    margin-top: 80px;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+.footer nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 20px;
+}
+.footer nav a:hover {
+    color: var(--text);
+}
+
+/* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
+@media (max-width: 768px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    .hero-section h1 { font-size: 32px; }
+    .navbar-sticky nav { display: none; }
+    .steps, .testimonial-grid, .card-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .live-matches, .how-it-works, .testimonials, .about-us { padding: 40px 20px; }
+    .hero-section { padding: 60px 20px; }
+    .form-container { margin: 30px auto; padding: 20px; }
+    .page-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .footer .container { flex-direction: column; gap: 15px; }
+}
+/* Стили для проверки пароля */
+.password-reqs ul {
+    list-style: none;
+    padding: 0;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.password-reqs li {
+    color: var(--muted);
+    transition: color 0.3s;
+}
+.password-reqs li::before {
+    content: '○ ';
+    color: #dc3545;
+}
+.password-reqs li.valid {
+    color: #28a745;
+}
+.password-reqs li.valid::before {
+    content: '● ';
+    color: #28a745;
+}

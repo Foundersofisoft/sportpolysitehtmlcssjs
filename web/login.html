@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - PlayoffArena</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/faceit.css">
+    <link rel="stylesheet" href="/assets/forms.css">
+</head>
+<body>
+    <header class="navbar-sticky">
+        <div class="container">
+            <a href="/" class="logo">Playoff<span>Arena</span></a>
+            <nav>
+                <a href="/matches.html">Матчи</a>
+                <a href="/venues.html">Площадки</a>
+            </nav>
+            <div class="user-actions">
+                <a href="/login.html" class="btn btn-secondary">Вход</a>
+                <a href="/register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h1>Вход в аккаунт</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full-width">Войти</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </div>
+    </main>
+
+    <script src="/assets/auth.js"></script>
+</body>
+</html>

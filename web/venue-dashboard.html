@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель заведения - PlayoffArena</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/faceit.css">
+</head>
+<body>
+    <header class="navbar-sticky">
+        <div class="container">
+            <a href="/" class="logo">Playoff<span>Arena</span></a>
+            <nav><a href="/">Матчи</a><a href="/venues.html">Площадки</a></nav>
+            <div id="user-nav-actions" class="user-actions"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Панель управления заведением</h1>
+        
+        <div id="create-venue-section" class="form-container" style="display: none;">
+            <h2>Создать профиль заведения</h2>
+            <p style="color: var(--muted); margin-bottom: 20px;">Заполните форму, чтобы добавить вашу площадку.</p>
+            <form id="venue-create-form">
+                <div class="form-group"><label for="title">Название</label><input type="text" id="title" name="title" required></div>
+                <div class="form-group"><label for="iin_bin">ИИН/БИН</label><input type="text" id="iin_bin" name="iin_bin" required></div>
+                <button type="submit" class="btn btn-primary btn-full-width">Создать</button>
+            </form>
+        </div>
+
+        <div id="manage-venue-section" style="display: none;">
+            <div class="form-container">
+                <h2>Информация о заведении</h2>
+                <form id="venue-edit-form">
+                    <div class="form-group"><label for="venue-title">Название</label><input type="text" id="venue-title" name="title"></div>
+                    <div class="form-group"><label for="venue-phone">Телефон</label><input type="tel" id="venue-phone" name="phone_number"></div>
+                    <div class="form-group"><label for="venue-desc">Описание</label><textarea id="venue-desc" name="description" rows="4"></textarea></div>
+                    <button type="submit" class="btn btn-primary">Сохранить информацию</button>
+                </form>
+            </div>
+
+            <div class="page-header" style="margin-top: 50px;">
+                <h2>Ваши поля</h2>
+                <button id="add-field-btn" class="btn btn-primary">Добавить поле</button>
+            </div>
+            <div id="fields-list"></div>
+        </div>
+        <div id="form-message" class="form-message"></div>
+    </main>
+    
+    <dialog id="field-modal">
+        <div class="form-container" style="margin: 0; max-width: 500px;">
+            <h2 id="modal-title">Добавить поле</h2>
+            <form id="field-form">
+                <input type="hidden" id="field-id" name="id">
+                <div class="form-group"><label for="field-sport">Спорт</label><input type="text" id="field-sport" name="sport" required></div>
+                <div class="form-group"><label for="field-address">Адрес</label><input type="text" id="field-address" name="address" required></div>
+                <div class="form-group"><label for="field-price">Цена/час</label><input type="number" id="field-price" name="price_per_hour" required></div>
+                <div class="form-group"><label for="field-amenities">Удобства</label><input type="text" id="field-amenities" name="amenities" placeholder="Душ, парковка"></div>
+                <div class="form-group"><label for="field-desc">Описание</label><textarea id="field-desc" name="description" rows="3"></textarea></div>
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" class="btn btn-primary" style="flex-grow: 1;">Сохранить поле</button>
+                    <button type="button" id="close-modal-btn" class="btn btn-secondary">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+    
+    <dialog id="schedule-modal">
+        <div class="form-container" style="margin: 0; max-width: 600px;">
+            <h2 id="schedule-modal-title">Расписание поля</h2>
+            <div class="form-container" style="margin: 20px 0; padding: 20px;">
+                <h4>Сгенерировать сетку</h4>
+                <form id="schedule-generate-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div class="form-group"><label>С какой даты</label><input type="date" id="start-date" required></div>
+                        <div class="form-group"><label>По какую</label><input type="date" id="end-date" required></div>
+                        <div class="form-group"><label>Время начала</label><input type="time" id="start-time" step="3600" value="09:00" required></div>
+                        <div class="form-group"><label>Время конца</label><input type="time" id="end-time" step="3600" value="22:00" required></div>
+                    </div>
+                    <div class="form-group"><label>Длительность слота (минут)</label><input type="number" id="slot-duration" value="60" required></div>
+                    <button type="submit" class="btn btn-primary btn-full-width">Сгенерировать</button>
+                </form>
+            </div>
+            <hr style="border-color: var(--line); margin: 30px 0;">
+            <h4>Просмотр слотов</h4>
+            <div class="form-group"><label>Показать слоты на дату</label><input type="date" id="view-slots-date"></div>
+            <div id="slots-view-list" class="slots-list"><p style="color: var(--muted)">Выберите дату.</p></div>
+            <button type="button" id="close-schedule-modal-btn" class="btn btn-secondary" style="margin-top: 20px;">Закрыть</button>
+        </div>
+    </dialog>
+
+    <script src="/assets/venue-dashboard.js"></script>
+</body>
+</html>

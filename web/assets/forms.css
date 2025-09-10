@@ -1,0 +1,60 @@
+.form-container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: var(--panel);
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--panel2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--brand);
+}
+
+.btn-full-width {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.form-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: var(--radius);
+    text-align: center;
+    display: none; /* Скрыто по умолчанию */
+}
+
+.form-message.success {
+    background-color: #28a74520;
+    color: #28a745;
+    display: block;
+}
+
+.form-message.error {
+    background-color: #dc354520;
+    color: #dc3545;
+    display: block;
+}

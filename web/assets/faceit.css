@@ -1,0 +1,33 @@
+/* --- НАВИГАЦИЯ --- */
+.navbar-sticky { position: sticky; top: 0; width: 100%; background-color: var(--panel); border-bottom: 1px solid var(--line); padding: 16px 0; z-index: 1000; }
+.navbar-sticky .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: bold; text-decoration: none; color: var(--text); }
+.logo span { color: var(--brand); }
+.navbar-sticky nav a { color: var(--muted); text-decoration: none; margin: 0 15px; transition: color 0.2s; }
+.navbar-sticky nav a:hover { color: var(--text); }
+
+/* --- КНОПКИ --- */
+.btn { padding: 10px 20px; border-radius: var(--radius); text-decoration: none; font-weight: 600; transition: background-color 0.2s, border-color 0.2s; border: 1px solid transparent; cursor: pointer; }
+.btn-primary { background-color: var(--brand); color: var(--text); }
+.btn-primary:hover { background-color: var(--brand-hover); }
+.btn-secondary { background-color: transparent; border-color: var(--line); color: var(--text); }
+.btn-secondary:hover { background-color: var(--panel2); }
+.btn-full-width { width: 100%; padding: 15px; font-size: 16px; }
+.btn-large { padding: 15px 30px; font-size: 18px; }
+
+/* --- ФОРМЫ --- */
+.form-container { max-width: 400px; margin: 60px auto; padding: 40px; background-color: var(--panel); border-radius: var(--radius); border: 1px solid var(--line); }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 14px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; background-color: var(--panel2); border: 1px solid var(--line); border-radius: var(--radius); color: var(--text); font-size: 16px; font-family: inherit; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--brand); }
+.form-message { margin-top: 20px; padding: 15px; border-radius: var(--radius); text-align: center; display: none; }
+.form-message.success { background-color: #28a74520; color: #28a745; display: block; }
+.form-message.error { background-color: #dc354520; color: #dc3545; display: block; }
+
+/* --- ОТЗЫВЫ --- */
+.player-review-block { padding: 15px; margin-bottom: 15px; border: 1px solid var(--line); border-radius: var(--radius); }
+.review-inputs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; align-items: end; }
+.form-group-checkbox { display: flex; align-items: center; justify-content: center; gap: 10px; padding-bottom: 10px; }
+.form-group-checkbox input { width: auto; }
+.form-group-checkbox label { margin: 0; }

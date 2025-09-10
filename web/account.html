@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль - PlayoffArena</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FF5500">
+</head>
+<body>
+    <header class="navbar-sticky"> </header>
+    <main class="container">
+        <div class="page-header"><h1>Мой профиль</h1></div>
+        <div style="display: grid; grid-template-columns: 200px 1fr; gap: 30px; align-items: flex-start;">
+            <div style="text-align: center;">
+                <img id="avatar-img" src="https://via.placeholder.com/150" alt="Аватар" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--line);">
+                <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                <button id="avatar-upload-btn" class="btn btn-secondary" style="margin-top: 15px; width: 100%;">Сменить фото</button>
+            </div>
+            <div class="form-container" style="margin: 0; max-width: none;">
+                <form id="profile-form">
+                    </form>
+                <div id="form-message" class="form-message"></div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="skill-rating">...</span>
+                        <span class="stat-label">Рейтинг навыка</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="sportsmanship-rating">...</span>
+                        <span class="stat-label">Рейтинг адекватности</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="no-show-count">...</span>
+                        <span class="stat-label">Неявки</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="venue-actions" style="margin-top: 40px;"></div>
+    </main>
+    <script src="/assets/app.js"></script>
+    <script src="/assets/account.js"></script>
+</body>
+</html>
